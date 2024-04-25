@@ -7,4 +7,4 @@ pnpm i
 ```
 
 ## Samples
-- [webworker-ts-webpack](https://github.com/jsonrpc-rx/jsonrpc-rx-samples/tree/main/packages/webworker-ts-webpack): The samples in ts and webpack of jsonrpc-rx
+- [webworker-ts-webpack](https://github.com/jsonrpc-rx/jsonrpc-rx-samples/tree/main/packages/webworker-ts-webpack): the samples in ts and webpack of jsonrpc-rx

@@ -1,0 +1,27 @@
+{
+  "name": "jsonrpc-rx-samples",
+  "version": "1.0.0",
+  "description": "The samples of jsonrpc-rx",
+  "scripts": {
+    "format": "prettier . --write",
+    "prepare": "husky install",
+    "commitlint": "commitlint --edit"
+  },
+  "dependencies": {
+    "@jsonrpc-rx/async-func-params-interceptor": "^0.0.1",
+    "@jsonrpc-rx/client": "0.0.1-beta",
+    "@jsonrpc-rx/server": "0.0.1-beta"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}

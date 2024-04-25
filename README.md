@@ -1,2 +1,9 @@
-# jsonrpc-rx-interceptor-samples
-Sample code illustrating the Jsonrpc-rx API
+# jsonrpc-rx-samples
+The samples of jsonrpc-rx
+
+## Usage
+```bash
+pnpm i
+```
+
+## Samples

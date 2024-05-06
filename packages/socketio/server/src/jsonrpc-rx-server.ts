@@ -4,7 +4,6 @@ import {
   MessageSender,
   expose,
 } from "@jsonrpc-rx/server"
-import { asyncFuncParamsInterceptor } from "@jsonrpc-rx/async-func-params-interceptor"
 import { Server, Socket } from "socket.io"
 import { getHandlers } from "./handlers"
 
@@ -16,9 +15,7 @@ export class JsonrpcRxServer {
       socket!.emit(CHANNEL_MESSAGE, data)
     const messageReceiver: MessageReceiver = (handler) =>
       socket!.on(CHANNEL_MESSAGE, handler)
-    const jsonrpcServer = new JsonrpcServerEnd(messageSender, messageReceiver, {
-      interceptors: [asyncFuncParamsInterceptor as any],
-    })
+    const jsonrpcServer = new JsonrpcServerEnd(messageSender, messageReceiver)
 
     expose(jsonrpcServer, getHandlers({ io, socket }))
   }

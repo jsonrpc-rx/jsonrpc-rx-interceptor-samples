@@ -11,11 +11,11 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const socketId = await client.call.getSocketId();
+      const socketId = await client.getSocketId();
       setSocketId(socketId);
     })();
 
-    client.subscribe.onsession({
+    client.onsession({
       next: (session) => {
         setSessions((prev) => [...prev, session]);
       },
@@ -28,7 +28,7 @@ function App() {
     const formData = new FormData(e.currentTarget);
     const msg = formData.get('msg') as string;
     if (msg.trim().length > 0) {
-      client.call.broadcast({
+      client.broadcast({
         message: msg.trim(),
       });
     }

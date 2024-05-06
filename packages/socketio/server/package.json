@@ -1,17 +1,17 @@
 {
-  "name": "api",
+  "name": "socketio-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec ts-node src/index.ts"
+    "start": "nodemon --exec ts-node src/index.ts",
+    "clean": "rimraf dist/ & rimraf node_modules/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@jsonrpc-rx/async-func-params-interceptor": "^0.0.1",
-    "@jsonrpc-rx/server": "0.0.1-beta",
+    "@jsonrpc-rx/server": "^0.2.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "socket.io": "^4.7.2",

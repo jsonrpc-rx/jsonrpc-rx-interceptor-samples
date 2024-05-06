@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "description": "The samples of jsonrpc-rx",
   "scripts": {
+    "start:socketio-client": "pnpm run -F socketio-client dev",
+    "start:socketio-server": "pnpm run -F socketio-server start",
+    "start:webworker-ts-webpack": "pnpm -F webworker-ts-webpack run start",
+    "clean": "run-p clean:* && rm -rf node_modules",
+    "clean:core": "pnpm run -F webworker-ts-webpack clean",
+    "clean:client": "pnpm run -F socketio-client clean",
+    "clean:server": "pnpm run -F socketio-server clean",
     "format": "prettier . --write",
     "prepare": "husky install",
     "commitlint": "commitlint --edit"
   },
   "dependencies": {
-    "@jsonrpc-rx/async-func-params-interceptor": "^0.0.1",
-    "@jsonrpc-rx/client": "0.0.1-beta",
-    "@jsonrpc-rx/server": "0.0.1-beta"
+    "@jsonrpc-rx/client": "^0.2.1",
+    "@jsonrpc-rx/server": "^0.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",

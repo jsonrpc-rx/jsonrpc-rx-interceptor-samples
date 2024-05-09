@@ -1,29 +1,25 @@
 import { JsonrpcClient, wrap } from '@jsonrpc-rx/client';
-import { HandlersType } from './handlers';
+import { HandlersType } from './worker';
 
 const worker = new Worker(new URL('./worker', import.meta.url));
 
-const messageSender = (msg) => worker.postMessage(msg);
-const messageReceiver = (handler) => (worker.onmessage = (evt) => handler(evt.data));
-const jsonrpcClient = new JsonrpcClient(messageSender, messageReceiver);
+// the message sender
+const msgSender = (msg) => worker.postMessage(msg);
+// the message receiver
+const msgReceiver = (h) => (worker.onmessage = (e) => h(e.data));
+// create jsonrpcClient
+const jsonrpcClient = new JsonrpcClient(msgSender, msgReceiver);
 
+// warp with Proxy
 const reomte = wrap<HandlersType>(jsonrpcClient);
 
 (async () => {
+  // call the method "sum"
   const sum = await reomte.sum(5, 6);
   console.log(sum); // 11
 
-  const upperCase = await reomte.upperCase('aaa');
-  console.log(upperCase); // 'AAA'
-
-  const multiply = (...nums: number[]) => nums.reduce((sum, n) => sum * n);
-  const product = await reomte.math(multiply, 5, 6); // multiply 为 function 类型的参数，由 asyncFuncParamsInterceptor 拦截器提供这个能力
-  console.log(product); // 30
-
-  reomte.hello();
-
-  reomte.behaviorTimer({
-    next: (value) => console.log(value), // '0---1---2---3--...--10---complete!'
-    complete: () => console.log('complete!'),
+  // subscribe to the subject "timer"
+  reomte.timer({
+    next: (value) => console.log(value), // 0---1---2---3--...
   });
 })();

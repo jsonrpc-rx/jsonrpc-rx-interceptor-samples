@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "es2020",
+    "target": "es5",
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "allowJs": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "strict": false
+  }
+}

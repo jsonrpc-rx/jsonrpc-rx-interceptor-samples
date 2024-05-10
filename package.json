@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The samples of jsonrpc-rx",
   "scripts": {
+    "start:socketio": "run-p start:socketio-*",
     "start:socketio-client": "pnpm run -F socketio-client dev",
     "start:socketio-server": "pnpm run -F socketio-server start",
     "start:webworker-ts-webpack": "pnpm -F webworker-ts-webpack run start",
@@ -15,10 +16,6 @@
     "format": "prettier . --write",
     "prepare": "husky install",
     "commitlint": "commitlint --edit"
-  },
-  "dependencies": {
-    "@jsonrpc-rx/client": "^0.2.1",
-    "@jsonrpc-rx/server": "^0.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",

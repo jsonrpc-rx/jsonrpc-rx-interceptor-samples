@@ -9,6 +9,9 @@ const handlers = {
   hello: asNotify((who: string) => {
     console.log('hello ', who);
   }),
+  useAlert: (alert: (message?: any) => void) => {
+    setTimeout(() => alert('hello jsonrpc-rx !'), 5000);
+  },
   timer: asSubject(({ next }: Publisher<number>) => {
     let a = 0;
     const interval = setInterval(() => next(++a), 1000);

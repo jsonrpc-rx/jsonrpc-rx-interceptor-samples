@@ -18,6 +18,9 @@ const reomte = wrap<HandlersType>(jsonrpcClient);
 
   reomte.hello('jsonrpc-rx');
 
+  // 使用 Function 类型的参数化
+  reomte.useAlert(alert.bind(window));
+
   reomte.timer({
     next: (value) => console.log('timer: ', value), // 1---2---3--...
   });

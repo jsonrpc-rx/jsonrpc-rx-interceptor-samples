@@ -1,5 +1,5 @@
 {
-  "name": "webworker-ts-webpack",
+  "name": "webworker-plus",
   "version": "1.0.0",
   "description": "The samples in ts and webpack of jsonrpc-rx",
   "main": "index.js",
@@ -15,7 +15,8 @@
     "@jsonrpc-rx/server": "^0.2.1",
     "@babel/plugin-transform-runtime": "^7.19.1",
     "@babel/runtime-corejs3": "^7.19.1",
-    "core-js": "^3.25.2"
+    "core-js": "^3.25.2",
+    "rxjs": "^7.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",

@@ -8,11 +8,13 @@
     "start:socketio-server": "pnpm run -F socketio-server start",
     "start:webworker": "pnpm -F webworker run start",
     "start:webworker-plus": "pnpm -F webworker-plus run start",
+    "start:vscode-webview": "pnpm -F vscode-webview run dev",
     "clean": "run-p clean:* && rm -rf node_modules",
     "clean:socketio-client": "pnpm run -F socketio-client clean",
     "clean:socketio-server": "pnpm run -F socketio-server clean",
     "clean:webworker": "pnpm run -F webworker clean",
     "clean:webworker-plus": "pnpm -F webworker-plus run clean",
+    "clean:vscode-webview": "pnpm -F vscode-webview run clean",
     "format": "prettier . --write",
     "prepare": "husky install",
     "commitlint": "commitlint --edit"
